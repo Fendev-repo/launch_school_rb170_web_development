@@ -1,4 +1,4 @@
-# Parsing Path and Parameters
+# Practice Problems: URL Components
 
 ### Assignment - Questionnaire
 Given the following URL:
