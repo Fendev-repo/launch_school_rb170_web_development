@@ -48,5 +48,5 @@ loop do
   client.close
 end
 # To run program - simply execute this script using $ ruby server.rb
-# Then open a browser to localhost:3003?sides=5&rolls=10
+# Then open a browser to localhost:3003?number=10
 # Then in the address bar of the browser type HTTP requests
