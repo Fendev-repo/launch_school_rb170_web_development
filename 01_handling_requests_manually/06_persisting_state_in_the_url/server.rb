@@ -1,5 +1,4 @@
 require 'socket'
-require 'pry-byebug'
 
 server = TCPServer.new('localhost', 3003)
 
