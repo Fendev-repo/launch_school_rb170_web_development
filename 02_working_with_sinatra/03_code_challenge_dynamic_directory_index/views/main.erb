@@ -17,10 +17,10 @@
 
   <div class="container">
     <div class="collection">
-	   <% @all_files.each do |file| %>
-	   <% next if ['.', '..'].include? file %>
-     <a href="<%= file %>" class="collection-item"><%= file %></a>
-	   <% end %>
+      <% @all_files.each do |file| %>
+      <% next if ['.', '..'].include? file %>
+      <a href="<%= file %>" class="collection-item"><%= file %></a>
+      <% end %>
     </div>
 
     <a href="/?sort=desc" class="waves-effect waves-light btn">Ascending</a>
