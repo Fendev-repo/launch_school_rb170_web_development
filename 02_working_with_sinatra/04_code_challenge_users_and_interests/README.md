@@ -18,8 +18,8 @@ Add a new user to the users.yaml file. Verify that the site updates accordingly.
 
 Below is the content of users.yaml. Create this file in the same directory as your application:
 
----
-:jamy:
+```yaml
+- :jamy:
   :email: jamy.rustenburg@gmail.com
   :interests:
   - woodworking
@@ -37,3 +37,4 @@ Below is the content of users.yaml. Create this file in the same directory as yo
   - politics
   - history
   - birding
+  ```
