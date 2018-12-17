@@ -9,12 +9,27 @@ before do
   @chapters = chapters
 end
 
+# rubocop:disable Metrics/BlockLength
 helpers do
   def in_paragraphs(chapter_content)
     chapter_content.split("\n\n").map do |line|
       "<p>#{line}</p>"
     end.join
   end
+
+  # rubocop:disable Metrics/AbcSize
+  def highlight_search_query_in_paragraph(title)
+    text = File.read(chapters[title].first)
+
+    rtn_ary = text.split("\n\n").each_with_object([]) do |para, ary|
+      if para.include?(params[:query])
+        str = "<strong>#{params[:query]}</strong>"
+        ary << para.gsub(params[:query], str)
+      end
+    end
+    rtn_ary.first
+  end
+  # rubocop:enable Metrics/AbcSize
 
   def chapters
     chapters = {}
@@ -41,6 +56,7 @@ helpers do
     results
   end
 end
+# rubocop:enable Metrics/BlockLength
 
 get '/' do
   @title = 'The Adventures of Sherlock Holmes'

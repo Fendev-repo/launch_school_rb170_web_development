@@ -12,12 +12,13 @@
   <% if @search_results.nil? || @search_results.empty? %>
     <p>Sorry, no matches were found.</p>
   <% else %>
-    <ol>
+    <ul>
       <% @search_results.each do |title| %>
       <li>
         <a href="/chapters/<%= chapter_number(title) %>"><%= title %> <a/>
+        <a href="/chapters/<%= chapter_number(title) %>"><p><%= highlight_search_query_in_paragraph(title) %></p></a>
       </li>
       <% end %>
-    </ol>
+    </ul>
   <% end %>  
 <% end %>
