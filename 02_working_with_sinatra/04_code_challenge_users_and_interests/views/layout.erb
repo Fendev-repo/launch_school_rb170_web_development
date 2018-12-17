@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="nav-wrapper blue lighten-3">
+        <a href="\" class="brand-logo left">Home</a>
+      </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <div class="container">
+      <h3 class="center">Users And Interests App</h3>
+      <%= yield %>
+      
+      <ul class="pagination center">
+        <% @users.each do |user| %>
+          <li class="<%= pagination_status_class(user) %>"><a href="<%= link(user) %>"><%= first_name(user) %></a></li>
+        <% end %> 
+        </li>
+      </ul>
+    </div>
+
+    <h6 class="center">There are <%= count(:users) %> users with a total of <%= count(:interests) %> interests.</h6>
+    <!-- Compiled and minified JavaScript -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

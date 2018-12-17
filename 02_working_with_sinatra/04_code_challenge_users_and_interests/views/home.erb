@@ -1,0 +1,29 @@
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Interests</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+    <% @users.each_pair do |name, profile| %>
+    <tr>
+      <td><a href="/user/<%= name %>"><%= name.capitalize %></a></a>
+      <td><a href="/user/<%= name %>"><%= profile[:email] %></a></td>
+      <td>
+        <% profile[:interests].each do |interest|%>
+          <ul>
+            <li>
+              <%= interest.capitalize %></li>
+          </ul>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
